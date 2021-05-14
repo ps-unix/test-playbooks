@@ -1,8 +1,10 @@
 ---
 - name: Allow new incoming traffic on TCP port 22 (SSH)
-  iptables:
-    chain: INPUT
-    protocol: tcp
-    destination_port: 22
-    jump: ACCEPT
-    comment: Accept new SSH connections.
+  tasks:
+  - name:
+    iptables:
+      chain: INPUT
+      protocol: tcp
+      destination_port: 22
+      jump: ACCEPT
+      comment: Accept new SSH connections.
