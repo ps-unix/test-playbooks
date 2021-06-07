@@ -1,6 +1,7 @@
 ---
 - name: Enable firewalld
- 
+  hosts: all
+  
   tasks:
   - name: Enable firewalld
     service: name=firewalld state=started enabled=yes
