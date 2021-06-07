@@ -1,7 +1,5 @@
 ---
-- name: Enable firewalld
-  hosts: all
-  
-  tasks:
-  - name: Enable firewalld
-    service: name=firewalld state=started enabled=yes
+- name: reload service firewalld
+  systemd:
+    name: firewalld
+    state: reloaded
